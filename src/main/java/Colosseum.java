@@ -43,7 +43,7 @@ public class Colosseum {
      * <p>
      * Requirements we should check the user for: <br>
      * - Hit points are between 1 and MAX_HIT_POINTS <br>
-     * - No more than 50 points are split between attack level and defense leve <br>
+     * - No more than 50 points are split between attack level and defense level <br>
      * - Attack level and defense level must have at least 1 point each <br>
      * Example of how this will look to the user:
      * <p>
@@ -67,12 +67,31 @@ public class Colosseum {
      * Sorry. The defense level must be between 1 and 23: 23
      *
      * @return tempPokemon - the Pokemon we built and are going to set our fighting Pokemon to <br>
-     *         (Look, we can return objects too!)
-     *         <p>
-     *         Implement this function.
+     * (Look, we can return objects too!)
+     * <p>
+     * Implement this function.
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        Scanner sc = new Scanner(System.in);
+        int hp;
+        int attackpoints;
+        int defensepoints;
+
+        if (hp <= MAX_HIT_POINTS && hp >= 1) {
+            System.out.println("How many hit points will it have?");
+            hp = sc.nextInt();
+        }
+        if (attackpoints >= 1 && attackpoints <= 49) ;
+        {
+            System.out.println("Enter your attack level");
+            attackpoints = sc.nextInt();
+        }
+        if (defensepoints >= 1 && defensepoints <= 3) {
+            System.out.print("Enter your defense level");
+            defensepoints = sc.nextInt();
+        }
+
         return tempPokemon;
     }
 
@@ -90,6 +109,8 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
+
+
         System.out.println("Implement me!");
     }
 
@@ -151,6 +172,7 @@ public class Colosseum {
             secondPokemon = tempPokemon;
         }
     }
+
     /**
      * Conducts the Pokemon battle.
      * <p>
